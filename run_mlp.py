@@ -30,5 +30,7 @@ history = model.fit(X_train, y_train,
                         verbose=1
                         )
 
+#print (history.history['val_loss'])
+
 # evaluation
 evaluate_model(model, X_test, y_test)
