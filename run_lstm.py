@@ -8,9 +8,9 @@ from evaluation import evaluate_model
 
 # create the models
 model = Sequential()
-model.add(Embedding(len(word_index)+1, 32, input_shape=(280,)))
-model.add(Bidirectional(LSTM(32)))
-model.add(Dropout(0.1))
+model.add(Embedding(len(word_index)+1, 128, input_shape=(280,)))
+model.add(Bidirectional(LSTM(128)))
+model.add(Dropout(0.5))
 model.add(Dense(y_train.shape[1], activation="softmax"))
 
 model.compile(loss="categorical_crossentropy",
