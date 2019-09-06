@@ -9,7 +9,10 @@ from keras.callbacks import EarlyStopping
 
 # create the models
 model = Sequential()
-model.add(Dense(10, input_shape=(X_train.shape[1],)))
+model.add(Dense(100, input_shape=(X_train.shape[1],)))
+model.add(Activation('sigmoid'))
+model.add(Dropout(0.1))
+model.add(Dense(100, input_shape=(X_train.shape[1],)))
 model.add(Activation('sigmoid'))
 model.add(Dropout(0.1))
 model.add(Dense(y_train.shape[1], activation="softmax"))

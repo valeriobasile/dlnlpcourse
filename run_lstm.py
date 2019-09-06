@@ -20,7 +20,7 @@ model.summary()
 
 history = model.fit(X_train, y_train,
                         batch_size=32,
-                        epochs=5,
+                        epochs=4,
                         shuffle=True,
                         verbose=1
                         )

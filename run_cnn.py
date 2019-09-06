@@ -14,6 +14,11 @@ model.add(Conv1D(128, 16, activation='relu'))
 model.add(MaxPooling1D(pool_size=8))
 model.add(Flatten())
 model.add(Dropout(0.5))
+
+model.add(Dense(100, input_shape=(X_train.shape[1],)))
+model.add(Activation('sigmoid'))
+model.add(Dropout(0.1))
+
 model.add(Dense(y_train.shape[1], activation="softmax"))
 
 model.compile(loss="categorical_crossentropy",
@@ -23,7 +28,7 @@ model.summary()
 
 history = model.fit(X_train, y_train,
                         batch_size=32,
-                        epochs=10,
+                        epochs=5,
                         shuffle=True,
                         verbose=1
                         )
